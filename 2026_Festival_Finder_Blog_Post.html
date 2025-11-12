@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Take our 2026 music festival quiz to discover the perfect UK or European festival matching your music taste, travel plans, and vibe. Updated for 2026 with dates, budgets, and insider tips.">
+    <meta name="keywords" content="2026 music festivals, UK festivals 2026, Europe festivals 2026, festival quiz, festival finder, music festival guide">
+    <title>2026 UK and Europe Music Festival Quiz: Find Your Festival, Dates and Budget Tips</title>
+</head>
+<body>
+
+<style>
+/****************************************
+ * Base Blog Post Styling
+ ****************************************/
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background: #f5f5f5;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    background: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+    color: #FF6B35;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: 1.3;
+}
+
+h2 {
+    color: #FF6B35;
+    font-size: 1.8em;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-left: 5px solid #FFD93D;
+    padding-left: 15px;
+}
+
+h3, h4 {
+    color: #4ECDC4;
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+ul, ol {
+    margin-bottom: 20px;
+    padding-left: 30px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+a {
+    color: #FF6B35;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #4ECDC4;
+    text-decoration: underline;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 30px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.update-notice {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    font-weight: 500;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.cta-box {
+    background: linear-gradient(135deg, #FFD93D 0%, #FF6B35 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.cta-box h2 {
+    border: none;
+    padding: 0;
+    color: white;
+    margin-top: 0;
+}
+
+/****************************************
+ * Responsive Table Styling
+ ****************************************/
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    margin: 30px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+    background: white;
+}
+
+th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 10px;
+    text-align: left;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+}
+
+td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+tr:hover {
+    background: #f9f9f9;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+@media (max-width: 600px) {
+    th, td {
+        font-size: 0.85rem;
+        padding: 10px 5px;
+    }
+}
+
+/****************************************
+ * Quiz Container & Elements
+ ****************************************/
+.quiz-container {
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.quiz-container h2 {
+    color: white;
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    border: none;
+    padding: 0;
+}
+
+.quiz-question {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-question p {
+    color: #FF6B35;
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.quiz-options {
+    margin-left: 0;
+}
+
+.quiz-options label {
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    background: #f8f8f8;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.quiz-options label:hover {
+    background: #FFD93D;
+    border-color: #FF6B35;
+    transform: translateX(5px);
+}
+
+.quiz-options input[type="radio"] {
+    margin-right: 10px;
+}
+
+.quiz-options input[type="radio"]:checked + label {
+    background: #FFD93D;
+    border-color: #FF6B35;
+}
+
+.btn-submit {
+    display: block;
+    margin: 30px auto;
+    padding: 15px 40px;
+    background: white;
+    color: #764ba2;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background: #FFD93D;
+}
+
+.result-container {
+    margin-top: 30px;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    display: none;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.festival-result {
+    padding: 20px;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #f6f8fa 0%, #e9ecef 100%);
+    border-radius: 10px;
+    border-left: 5px solid #FF6B35;
+}
+
+.result-festival-title {
+    color: #FF6B35;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.result-festival-title a {
+    color: #FF6B35;
+    font-weight: 600;
+}
+
+.crowd-profile {
+    background: #FFD93D;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+.budget-info {
+    background: #4ECDC4;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.money-tip {
+    background: #f8f8f8;
+    padding: 10px;
+    border-left: 3px solid #4ECDC4;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/****************************************
+ * Festival Category Cards
+ ****************************************/
+.festival-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.category-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #FF6B35;
+}
+
+.category-card h3 {
+    color: #FF6B35;
+    margin-bottom: 15px;
+}
+
+.category-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.category-card li {
+    padding: 5px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.category-card li:last-child {
+    border: none;
+}
+
+/****************************************
+ * FAQ Section
+ ****************************************/
+.faq-section {
+    background: #f8f8f8;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 40px 0;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-question {
+    color: #FF6B35;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.faq-answer {
+    padding-left: 20px;
+    color: #555;
+}
+
+/****************************************
+ * What's New Section
+ ****************************************/
+.whats-new {
+    background: linear-gradient(135deg, #FFD93D 0%, #FF6B35 100%);
+    color: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 30px 0;
+}
+
+.whats-new h2 {
+    color: white;
+    border: none;
+    padding: 0;
+}
+
+.whats-new ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.whats-new li {
+    margin-bottom: 10px;
+}
+
+/****************************************
+ * Toolkit Section
+ ****************************************/
+.toolkit-section {
+    background: #f0f8ff;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 30px 0;
+    border-left: 5px solid #4ECDC4;
+}
+
+.toolkit-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+}
+
+.toolkit-item strong {
+    color: #4ECDC4;
+}
+</style>
+
+<div class="container">
+    <!-- Main Post Title -->
+    <h1>2026 UK and Europe Music Festival Quiz: Find Your Festival, Dates and Budget Tips</h1>
+    
+    <!-- CTA directly under H1 -->
+    <div class="cta-box">
+        <h2>Play our quick quiz to discover which 2026 festival fits your music taste, vibe and travel plans</h2>
+    </div>
+
+    <!-- Update Notice -->
+    <div class="update-notice">
+        📍 Updated for the 2026 festival season with the latest dates, venues, and lineup information
+    </div>
+
+    <!-- Introduction -->
+    <p>Every year, music enthusiasts face the delightful challenge of deciding which festival to attend. With the 2026 lineup of music festivals across the UK and Europe, the options are more abundant and diverse than ever. Whether you're drawn to the immersive electronic wonderland of Tomorrowland or the legendary rock stages of Download, selecting the right festival can make all the difference in your experience.</p>
+    
+    <p>This comprehensive guide will help you determine which festival suits your personal style, music preferences, and practical needs, ensuring an unforgettable 2026 festival experience. From intimate indie gatherings to massive electronic dance celebrations, we've got you covered.</p>
+
+    <!-- What's New in 2026 Section -->
+    <div class="whats-new">
+        <h2>What's New in 2026</h2>
+        <ul>
+            <li>🎪 <strong>Glastonbury takes a fallow year</strong> - No festival in 2026, with the next edition expected in June 2027</li>
+            <li>🎸 <strong>Hellfest expands to two weekends</strong> - Double the metal mayhem with separate weekend passes</li>
+            <li>🌟 <strong>EXIT Festival celebrates its 25th anniversary</strong> - Special programming at the historic Petrovaradin Fortress</li>
+            <li>🎵 <strong>Primavera Sound returns</strong> - Back to its traditional early June dates with an expanded lineup</li>
+            <li>🏝️ <strong>New Croatian festival circuit</strong> - Ultra Europe, Dimensions, and more create perfect island-hopping opportunities</li>
+        </ul>
+    </div>
+
+    <!-- Festival Finder Quiz Image -->
+    <p><img src="https://cdn.shopify.com/s/files/1/0807/8671/9039/files/take_the_quiz_480x480.jpg?v=1735122255" alt="2026 Music Festival Quiz - Find Your Perfect Festival Match"></p>
+
+<!-- BEGIN: Festival Finder Quiz (updated) -->
+<div class="quiz-container">
+  <h2>Festival Finder Quiz</h2>
+
+  <!-- Question 1: Location -->
+  <div class="quiz-question">
+    <p><span style="color:#ffff00;">Where are you based?</span></p>
+    <div class="quiz-options">
+      <label><input type="radio" name="location" value="uk"> United Kingdom</label>
+      <label><input type="radio" name="location" value="wne"> Western or Northern Europe (for example Ireland, France, Spain, Portugal, Italy, Germany, Benelux, Nordics)</label>
+      <label><input type="radio" name="location" value="cee"> Central or Eastern Europe (for example Poland, Czech Republic, Austria, Hungary, Balkans, Baltic states, Romania, Bulgaria, Greece)</label>
+      <label><input type="radio" name="location" value="outside"> Outside Europe</label>
+    </div>
+  </div>
+
+  <!-- Question 2: Music -->
+  <div class="quiz-question">
+    <p><span style="color:#ffff00;">What music are you mainly going for?</span></p>
+    <div class="quiz-options">
+      <label><input type="radio" name="music" value="rock"> Guitar based (rock, indie, metal)</label>
+      <label><input type="radio" name="music" value="electronic"> Electronic and DJ focused</label>
+      <label><input type="radio" name="music" value="hiphop"> Hip hop and urban</label>
+      <label><input type="radio" name="music" value="multi"> Mixed line up, I like variety</label>
+    </div>
+  </div>
+
+  <!-- Question 3: Atmosphere -->
+  <div class="quiz-question">
+    <p><span style="color:#ffff00;">What atmosphere do you want?</span></p>
+    <div class="quiz-options">
+      <label><input type="radio" name="atmosphere" value="party"> Full on party, very little sleep</label>
+      <label><input type="radio" name="atmosphere" value="relaxed"> Relaxed or family friendly</label>
+      <label><input type="radio" name="atmosphere" value="artsy"> Artsy and alternative</label>
+      <label><input type="radio" name="atmosphere" value="headliners"> Big mainstream headliners</label>
+    </div>
+  </div>
+
+  <!-- Question 4: Trip type -->
+  <div class="quiz-question">
+    <p><span style="color:#ffff00;">What kind of trip are you looking for?</span></p>
+    <div class="quiz-options">
+      <label><input type="radio" name="trip" value="close"> As close to home as possible</label>
+      <label><input type="radio" name="trip" value="short"> A short trip within Europe is fine</label>
+      <label><input type="radio" name="trip" value="far"> Happy to travel further if the festival is perfect</label>
+    </div>
+  </div>
+
+  <button class="btn-submit" onclick="handleFestivalQuizSubmit()">Find my festivals</button>
+
+  <!-- Results and filters -->
+  <div class="result-container" id="festival-result-container">
+    <h2>Your festival matches</h2>
+
+    <!-- Filters shown after quiz is run at least once -->
+<div id="festival-filters" style="display:none; margin-bottom:15px;">
+
+  <div class="quiz-options" style="margin-bottom:10px;">
+    <span><strong>Budget:</strong></span><br>
+    <label>
+      <input type="radio" name="filter-budget" value="cheap" onclick="applyFestivalFiltersAndRender()">
+      Cheaper options
+    </label><br>
+    <label>
+      <input type="radio" name="filter-budget" value="medium" onclick="applyFestivalFiltersAndRender()">
+      Mid range
+    </label><br>
+    <label>
+      <input type="radio" name="filter-budget" value="iconic" onclick="applyFestivalFiltersAndRender()">
+      Iconic blowouts
+    </label>
+  </div>
+
+  <div class="quiz-options" style="margin-bottom:10px;">
+    <span><strong>Crowd:</strong></span><br>
+    <label>
+      <input type="radio" name="filter-crowd" value="all" onclick="applyFestivalFiltersAndRender()">
+      Any crowd
+    </label><br>
+    <label>
+      <input type="radio" name="filter-crowd" value="younger" onclick="applyFestivalFiltersAndRender()">
+      Younger, late night
+    </label><br>
+    <label>
+      <input type="radio" name="filter-crowd" value="mixed" onclick="applyFestivalFiltersAndRender()">
+      Mixed ages
+    </label><br>
+    <label>
+      <input type="radio" name="filter-crowd" value="matureFamily" onclick="applyFestivalFiltersAndRender()">
+      More mature or family oriented
+    </label>
+  </div>
+
+  <div class="quiz-options">
+    <label>
+      <input type="checkbox" id="filter-kids" onclick="applyFestivalFiltersAndRender()">
+      I am bringing children or younger teens
+    </label>
+  </div>
+
+</div>
+    <div id="festival-result-messages" style="margin-top:15px;"></div>
+    <div id="festival-result-box"></div>
+  </div>
+</div>
+<!-- END: Festival Finder Quiz (updated) -->
+
+<script>
+  // ============================
+  // Festival data
+  // ============================
+  const festivalData = [
+    {
+      key: "rockawayBeach",
+      name: "Rockaway Beach Festival",
+      link: "https://www.rockawaybeach.co.uk/",
+      region: "uk",
+      country: "United Kingdom",
+      genres: ["rock", "indie"],
+      vibes: ["artsy"],
+      crowdAge: "mixed",
+      kidFriendly: false,
+      costLevelByRegion: { uk: "medium", wne: "medium", cee: "medium", outside: "high" },
+      description: "Indoor winter indie and post punk festival in a seaside holiday park, intimate and devoted crowd."
+    },
+    {
+      key: "celticConnections",
+      name: "Celtic Connections",
+      link: "https://www.celticconnections.com/",
+      region: "uk",
+      country: "United Kingdom",
+      genres: ["folk", "world"],
+      vibes: ["relaxed", "artsy"],
+      crowdAge: "matureFamily",
+      kidFriendly: true,
+      costLevelByRegion: { uk: "low", wne: "medium", cee: "medium", outside: "high" },
+      description: "City wide winter festival of Celtic, folk and world music in Glasgow, concerts and sessions across many venues."
+    },
+    {
+      key: "download",
+      name: "Download Festival",
+      link: "https://downloadfestival.co.uk/",
+      region: "uk",
+      country: "United Kingdom",
+      genres: ["rock", "metal"],
+      vibes: ["party", "headliners"],
+      crowdAge: "younger",
+      kidFriendly: false,
+      costLevelByRegion: { uk: "medium", wne: "medium", cee: "medium", outside: "high" },
+      description: "Legendary rock and metal gathering at Donington Park with big stages and serious mosh pits."
+    },
+    {
+      key: "isleOfWight",
+      name: "Isle of Wight Festival",
+      link: "https://isleofwightfestival.com/",
+      region: "uk",
+      country: "United Kingdom",
+      genres: ["multi"],
+      vibes: ["headliners", "party"],
+      crowdAge: "mixed",
+      kidFriendly: true,
+      costLevelByRegion: { uk: "medium", wne: "medium", cee: "medium", outside: "high" },
+      description: "Historic island festival with rock, pop and nostalgia acts, classic British summer crowd."
+    },
+    {
+      key: "parklife",
+      name: "Parklife Festival",
+      link: "https://parklife.uk.com/",
+      region: "uk",
+      country: "United Kingdom",
+      genres: ["electronic", "hiphop"],
+      vibes: ["party"],
+      crowdAge: "younger",
+      kidFriendly: false,
+      costLevelByRegion: { uk: "medium", wne: "medium", cee: "medium", outside: "high" },
+      description: "Two day city park party in Manchester with hip hop, electronic and pop, very lively younger crowd."
+    },
+    {
+      key: "latitude",
+      name: "Latitude Festival",
+      link: "https://www.latitudefestival.com/",
+      region: "uk",
+      country: "United Kingdom",
+      genres: ["indie", "folk", "multi"],
+      vibes: ["relaxed", "artsy"],
+      crowdAge: "mixed",
+      kidFriendly: true,
+      costLevelByRegion: { uk: "medium", wne: "medium", cee: "medium", outside: "high" },
+      description: "Music and arts festival in Suffolk with lakes, woodland stages and a very mixed age audience."
+    },
+    {
+      key: "greenMan",
+      name: "Green Man Festival",
+      link: "https://www.greenman.net/",
+      region: "uk",
+      country: "United Kingdom",
+      genres: ["indie", "folk"],
+      vibes: ["relaxed", "artsy"],
+      crowdAge: "matureFamily",
+      kidFriendly: true,
+      costLevelByRegion: { uk: "medium", wne: "medium", cee: "medium", outside: "high" },
+      description: "Scenic festival in the Welsh hills with indie, folk and alternative music, strong family and arts focus."
+    },
+    {
+      key: "womad",
+      name: "WOMAD Festival",
+      link: "https://www.womad.co.uk/",
+      region: "uk",
+      country: "United Kingdom",
+      genres: ["world", "multi"],
+      vibes: ["relaxed", "artsy"],
+      crowdAge: "matureFamily",
+      kidFriendly: true,
+      costLevelByRegion: { uk: "medium", wne: "medium", cee: "medium", outside: "high" },
+      description: "World music, dance and arts festival with workshops, global food and a very family friendly feel."
+    },
+    {
+      key: "boomtown",
+      name: "Boomtown Fair",
+      link: "https://www.boomtownfair.co.uk/",
+      region: "uk",
+      country: "United Kingdom",
+      genres: ["multi"],
+      vibes: ["party", "artsy"],
+      crowdAge: "younger",
+      kidFriendly: false,
+      costLevelByRegion: { uk: "high", wne: "high", cee: "high", outside: "high" },
+      description: "Immersive themed festival city with many stages, heavy bass music and a very alternative community."
+    },
+    {
+      key: "creamfields",
+      name: "Creamfields North",
+      link: "https://www.creamfields.com/",
+      region: "uk",
+      country: "United Kingdom",
+      genres: ["electronic"],
+      vibes: ["party", "headliners"],
+      crowdAge: "younger",
+      kidFriendly: false,
+      costLevelByRegion: { uk: "high", wne: "high", cee: "high", outside: "high" },
+      description: "Huge open air electronic festival in Cheshire with top DJs and very intense late nights."
+    },
+    {
+      key: "reading",
+      name: "Reading Festival",
+      link: "https://www.readingfestival.com/",
+      region: "uk",
+      country: "United Kingdom",
+      genres: ["rock", "multi"],
+      vibes: ["party", "headliners"],
+      crowdAge: "younger",
+      kidFriendly: false,
+      costLevelByRegion: { uk: "medium", wne: "medium", cee: "medium", outside: "high" },
+      description: "End of summer youth festival with rock, alternative and rap, famous for rowdy campsites."
+    },
+    {
+      key: "leeds",
+      name: "Leeds Festival",
+      link: "https://www.leedsfestival.com/",
+      region: "uk",
+      country: "United Kingdom",
+      genres: ["rock", "multi"],
+      vibes: ["party", "headliners"],
+      crowdAge: "younger",
+      kidFriendly: false,
+      costLevelByRegion: { uk: "medium", wne: "medium", cee: "medium", outside: "high" },
+      description: "Twin of Reading with rock, indie and alternative line up, strong student crowd and big pits."
+    },
+    {
+      key: "roskilde",
+      name: "Roskilde Festival",
+      link: "https://www.roskilde-festival.dk/",
+      region: "wne",
+      country: "Denmark",
+      genres: ["multi"],
+      vibes: ["party", "artsy"],
+      crowdAge: "mixed",
+      kidFriendly: true,
+      costLevelByRegion: { uk: "high", wne: "high", cee: "high", outside: "high" },
+      description: "Non profit mega festival near Copenhagen with many stages, art projects and strong community spirit."
+    },
+    {
+      key: "rockWerchter",
+      name: "Rock Werchter",
+      link: "https://www.rockwerchter.be/",
+      region: "wne",
+      country: "Belgium",
+      genres: ["rock", "multi"],
+      vibes: ["headliners", "party"],
+      crowdAge: "mixed",
+      kidFriendly: true,
+      costLevelByRegion: { uk: "high", wne: "medium", cee: "medium", outside: "high" },
+      description: "Classic Belgian festival with big rock and pop headliners and a very polished set up."
+    },
+    {
+      key: "openEr",
+      name: "Open'er Festival",
+      link: "https://opener.pl/",
+      region: "cee",
+      country: "Poland",
+      genres: ["multi"],
+      vibes: ["party", "headliners"],
+      crowdAge: "younger",
+      kidFriendly: true,
+      costLevelByRegion: { uk: "medium", wne: "medium", cee: "low", outside: "high" },
+      description: "Seaside airfield festival in Gdynia with global headliners and big crowds."
+    },
+    {
+      key: "sziget",
+      name: "Sziget Festival",
+      link: "https://szigetfestival.com/",
+      region: "cee",
+      country: "Hungary",
+      genres: ["multi"],
+      vibes: ["party", "artsy"],
+      crowdAge: "younger",
+      kidFriendly: true,
+      costLevelByRegion: { uk: "medium", wne: "medium", cee: "medium", outside: "high" },
+      description: "Island of Freedom in Budapest with many stages, art zones and a very international young crowd."
+    },
+    {
+      key: "electricCastle",
+      name: "Electric Castle",
+      link: "https://electriccastle.ro/",
+      region: "cee",
+      country: "Romania",
+      genres: ["multi"],
+      vibes: ["party", "artsy"],
+      crowdAge: "younger",
+      kidFriendly: false,
+      costLevelByRegion: { uk: "medium", wne: "medium", cee: "low", outside: "high" },
+      description: "Festival in the grounds of a Transylvanian castle with a mix of bands, DJs and impressive staging."
+    },
+    {
+      key: "ultraEurope",
+      name: "Ultra Europe",
+      link: "https://ultraeurope.com/",
+      region: "cee",
+      country: "Croatia",
+      genres: ["electronic"],
+      vibes: ["party"],
+      crowdAge: "younger",
+      kidFriendly: false,
+      costLevelByRegion: { uk: "high", wne: "high", cee: "medium", outside: "high" },
+      description: "Stadium style electronic festival in Split with big room house and huge production."
+    },
+    {
+      key: "tomorrowland",
+      name: "Tomorrowland",
+      link: "https://www.tomorrowland.com/",
+      region: "wne",
+      country: "Belgium",
+      genres: ["electronic"],
+      vibes: ["party", "headliners"],
+      crowdAge: "younger",
+      kidFriendly: false,
+      costLevelByRegion: { uk: "high", wne: "high", cee: "high", outside: "high" },
+      description: "Fantasy styled electronic festival with many stages, global DJs and a very energetic young crowd."
+    },
+    {
+      key: "dimensions",
+      name: "Dimensions Festival",
+      link: "https://dimensionsfestival.com/",
+      region: "cee",
+      country: "Croatia",
+      genres: ["electronic"],
+      vibes: ["artsy", "party"],
+      crowdAge: "mixed",
+      kidFriendly: false,
+      costLevelByRegion: { uk: "medium", wne: "medium", cee: "medium", outside: "high" },
+      description: "Intimate underground electronic festival in Tisno with beach stages and boat parties."
+    },
+    {
+      key: "lowlands",
+      name: "Lowlands Festival",
+      link: "https://lowlands.nl/",
+      region: "wne",
+      country: "Netherlands",
+      genres: ["multi"],
+      vibes: ["party", "artsy"],
+      crowdAge: "younger",
+      kidFriendly: true,
+      costLevelByRegion: { uk: "high", wne: "high", cee: "high", outside: "high" },
+      description: "Full feature Dutch camping festival with rock, electronic, hip hop, comedy and arts."
+    },
+    {
+      key: "electricPicnic",
+      name: "Electric Picnic",
+      link: "https://www.electricpicnic.ie/",
+      region: "wne",
+      country: "Ireland",
+      genres: ["multi"],
+      vibes: ["relaxed", "headliners"],
+      crowdAge: "mixed",
+      kidFriendly: true,
+      costLevelByRegion: { uk: "medium", wne: "medium", cee: "medium", outside: "high" },
+      description: "Creative camping festival in Ireland with music, arts and comedy, loved by all ages."
+    },
+    {
+      key: "montreuxJazz",
+      name: "Montreux Jazz Festival",
+      link: "https://www.montreuxjazzfestival.com/",
+      region: "wne",
+      country: "Switzerland",
+      genres: ["jazz", "world"],
+      vibes: ["relaxed", "artsy"],
+      crowdAge: "matureFamily",
+      kidFriendly: true,
+      costLevelByRegion: { uk: "high", wne: "high", cee: "high", outside: "high" },
+      description: "Prestigious lake side festival with jazz, soul and more, seated concerts and many free events on the waterfront."
+    }
+  ];
+
+  let lastFestivalScores = [];
+  let lastFestivalAnswers = null;
+
+  // ============================
+  // Quiz handling
+  // ============================
+  function handleFestivalQuizSubmit() {
+    const location = getCheckedValue("location");
+    const music = getCheckedValue("music");
+    const atmosphere = getCheckedValue("atmosphere");
+    const trip = getCheckedValue("trip");
+
+    if (!location || !music || !atmosphere || !trip) {
+      alert("Please answer all questions before submitting.");
+      return;
+    }
+
+    const answers = { location, music, atmosphere, trip };
+
+    lastFestivalAnswers = answers;
+    lastFestivalScores = scoreFestivals(answers);
+
+    // Reset filters to defaults
+    document.getElementById("filter-budget").value = "all";
+    document.getElementById("filter-crowd").value = "all";
+    document.getElementById("filter-kids").checked = false;
+
+    // Show filters and result container
+    document.getElementById("festival-filters").style.display = "block";
+    document.getElementById("festival-result-container").style.display = "block";
+
+    applyFestivalFiltersAndRender();
+  }
+
+  function getCheckedValue(name) {
+    const el = document.querySelector('input[name="' + name + '"]:checked');
+    return el ? el.value : null;
+  }
+
+  // ============================
+  // Scoring
+  // ============================
+  function scoreFestivals(answers) {
+    const scores = festivalData.map(fest => {
+      let score = 0;
+
+      // Music
+      if (answers.music === "electronic") {
+        if (fest.genres.includes("electronic")) score += 40;
+        else if (fest.genres.includes("multi")) score += 25;
+      } else if (answers.music === "rock") {
+        if (fest.genres.includes("rock") || fest.genres.includes("metal")) score += 40;
+        else if (fest.genres.includes("multi")) score += 25;
+      } else if (answers.music === "hiphop") {
+        if (fest.genres.includes("hiphop")) score += 40;
+        else if (fest.genres.includes("electronic") || fest.genres.includes("multi")) score += 20;
+      } else if (answers.music === "multi") {
+        if (fest.genres.includes("multi")) score += 35;
+        else score += 15;
+      }
+
+      // Atmosphere
+      if (answers.atmosphere === "party") {
+        if (fest.vibes.includes("party")) score += 30;
+        if (fest.vibes.includes("headliners")) score += 5;
+        if (fest.vibes.includes("relaxed")) score -= 5;
+      } else if (answers.atmosphere === "relaxed") {
+        if (fest.vibes.includes("relaxed")) score += 30;
+        if (fest.vibes.includes("party")) score -= 10;
+      } else if (answers.atmosphere === "artsy") {
+        if (fest.vibes.includes("artsy")) score += 30;
+      } else if (answers.atmosphere === "headliners") {
+        if (fest.vibes.includes("headliners")) score += 30;
+      }
+
+      // Region and trip type
+      score += regionScore(answers.location, answers.trip, fest.region);
+
+      return { festival: fest, score: score };
+    });
+
+    scores.sort(function(a, b) {
+      return b.score - a.score;
+    });
+
+    return scores;
+  }
+
+  function regionScore(userRegion, tripType, festRegion) {
+    let score = 0;
+    const isEuropeFest = (festRegion === "uk" || festRegion === "wne" || festRegion === "cee");
+
+    if (userRegion === "outside") {
+      // All European festivals are far
+      if (tripType === "close") {
+        score += 0;
+      } else if (tripType === "short") {
+        score += 5;
+      } else if (tripType === "far") {
+        score += 10;
+      }
+      return score;
+    }
+
+    const sameRegion = (userRegion === festRegion);
+
+    if (tripType === "close") {
+      if (sameRegion) score += 20;
+      else if (isEuropeFest) score += 8;
+    } else if (tripType === "short") {
+      if (sameRegion) score += 15;
+      else if (isEuropeFest) score += 12;
+    } else if (tripType === "far") {
+      if (sameRegion) score += 8;
+      else if (isEuropeFest) score += 12;
+    }
+
+    return score;
+  }
+
+  // ============================
+  // Filters and rendering
+  // ============================
+  function applyFestivalFiltersAndRender() {
+    const messagesDiv = document.getElementById("festival-result-messages");
+    const box = document.getElementById("festival-result-box");
+    messagesDiv.innerHTML = "";
+    box.innerHTML = "";
+
+    if (!lastFestivalScores || lastFestivalScores.length === 0 || !lastFestivalAnswers) {
+      return;
+    }
+
+    const budgetFilter = document.getElementById("filter-budget").value;
+    const crowdFilter = document.getElementById("filter-crowd").value;
+    const kidsFilter = document.getElementById("filter-kids").checked;
+
+    let filtered = lastFestivalScores.slice(); // copy
+
+    // Apply crowd filter
+    if (crowdFilter !== "all") {
+      filtered = filtered.filter(item => item.festival.crowdAge === crowdFilter);
+    }
+
+    // Apply kids filter
+    if (kidsFilter) {
+      filtered = filtered.filter(item => item.festival.kidFriendly);
+    }
+
+    // Apply budget filter
+    if (budgetFilter !== "all") {
+      filtered = filtered.filter(item => {
+        const band = getCostBandForUser(item.festival, lastFestivalAnswers.location);
+        if (budgetFilter === "cheap") {
+          return band === "low" || band === "medium";
+        }
+        if (budgetFilter === "iconic") {
+          return band === "high";
+        }
+        return true;
+      });
+    }
+
+    let fallbackUsed = false;
+
+    if (filtered.length === 0) {
+      // Filters are too strict, fall back to top matches
+      filtered = lastFestivalScores.slice(0, 3);
+      fallbackUsed = true;
+    }
+
+    // Messages and warnings
+    const msgParts = [];
+
+    if (lastFestivalAnswers.location === "outside" && lastFestivalAnswers.trip === "close") {
+      msgParts.push("All festivals in this guide are in Europe, so none are truly close to home. These results focus on your music and atmosphere choices.");
+    }
+
+    if (kidsFilter && lastFestivalAnswers.atmosphere === "party" &&
+        (lastFestivalAnswers.music === "electronic" || lastFestivalAnswers.music === "multi")) {
+      msgParts.push("Pure all night electronic festivals are rarely designed with small children in mind. These options are more suitable for families or have calmer areas.");
+    }
+
+    if (fallbackUsed) {
+      msgParts.push("Your filters were very strict, so we are showing your closest overall matches instead.");
+    }
+
+    if (msgParts.length > 0) {
+      messagesDiv.innerHTML = "<p>" + msgParts.join(" </p><p>") + "</p>";
+    }
+
+    renderFestivalResultsList(filtered, lastFestivalAnswers, box);
+  }
+
+  function getCostBandForUser(festival, userLocation) {
+    const bands = festival.costLevelByRegion || {};
+    if (userLocation === "uk") return bands.uk || "medium";
+    if (userLocation === "wne") return bands.wne || "medium";
+    if (userLocation === "cee") return bands.cee || "medium";
+    return bands.outside || "high";
+  }
+
+  function renderFestivalResultsList(items, answers, container) {
+    container.innerHTML = "";
+
+    // Show up to 6 results
+    const toShow = items.slice(0, 6);
+
+    toShow.forEach(function(item, index) {
+      const fest = item.festival;
+      const band = getCostBandForUser(fest, answers.location);
+      const budgetText = budgetBandToText(band);
+      const crowdText = crowdAgeToText(fest.crowdAge);
+      const whyText = buildWhyText(fest, answers);
+
+      const card = document.createElement("div");
+      card.style.marginBottom = "20px";
+
+      card.innerHTML =
+        '<h3 class="result-festival-title">' +
+          '<a href="' + fest.link + '" target="_blank" rel="noopener">' +
+            fest.name +
+          '</a>' +
+        '</h3>' +
+        '<p class="result-festival-description">' +
+          fest.description +
+        '</p>' +
+        '<p><strong>Why it suits you:</strong> ' + whyText + "</p>" +
+        '<p><strong>Crowd:</strong> ' + crowdText + "</p>" +
+        '<p><strong>Approx budget from your region:</strong> ' + budgetText + "</p>";
+
+      container.appendChild(card);
+    });
+  }
+
+  function budgetBandToText(band) {
+    if (band === "low") {
+      return "Low, good for tighter budgets if you book sensibly.";
+    }
+    if (band === "medium") {
+      return "Medium, you will want to plan travel and tickets but it is manageable.";
+    }
+    return "High, treat this as a bigger trip or blowout, especially once travel is included.";
+  }
+
+  function crowdAgeToText(crowdAge) {
+    if (crowdAge === "younger") {
+      return "Mostly twenties and early thirties, very lively late nights.";
+    }
+    if (crowdAge === "matureFamily") {
+      return "Mixed ages, many adults and families, calmer overall feel.";
+    }
+    return "Mixed ages with a balance of younger and older festival goers.";
+  }
+
+  function buildWhyText(fest, answers) {
+    const bits = [];
+
+    if (answers.music === "electronic" && fest.genres.includes("electronic")) {
+      bits.push("you chose electronic music");
+    } else if (answers.music === "rock" && (fest.genres.includes("rock") || fest.genres.includes("metal"))) {
+      bits.push("you picked guitar based music");
+    } else if (answers.music === "hiphop" && fest.genres.includes("hiphop")) {
+      bits.push("you wanted hip hop and urban sounds");
+    } else if (answers.music === "multi" && fest.genres.includes("multi")) {
+      bits.push("you like a mixed line up");
+    }
+
+    if (answers.atmosphere === "party" && fest.vibes.includes("party")) {
+      bits.push("you asked for a full on party feel");
+    } else if (answers.atmosphere === "relaxed" && fest.vibes.includes("relaxed")) {
+      bits.push("you prefer a more relaxed or family friendly atmosphere");
+    } else if (answers.atmosphere === "artsy" && fest.vibes.includes("artsy")) {
+      bits.push("you like artsy or alternative festivals");
+    } else if (answers.atmosphere === "headliners" && fest.vibes.includes("headliners")) {
+      bits.push("you wanted big headline acts");
+    }
+
+    if (bits.length === 0) {
+      return "it balances your music and atmosphere choices well.";
+    }
+
+    return bits.join(", and ") + ".";
+  }
+</script>
+
+
+    <!-- Festival Planning Toolkit -->
+    <h2>🛠️ Festival Planning Toolkit</h2>
+    
+    <p><img src="https://cdn.shopify.com/s/files/1/0807/8671/9039/files/budget_calculator_480x480.jpg?v=1735122528" alt="2026 Festival Budget Planning Tools"></p>
+    
+    <div class="toolkit-section">
+        <p>Make your 2026 festival experience smooth with these essential planning tools:</p>
+        
+        <div class="toolkit-item">
+            <strong>💰 Budget Tracking:</strong> <a href="https://www.travel-spend.com/" target="_blank">TravelSpend</a> - Track all festival expenses in real-time, from tickets to drinks
+        </div>
+        
+        <div class="toolkit-item">
+            <strong>👥 Group Expenses:</strong> <a href="https://www.splitwise.com/" target="_blank">Splitwise</a> - Split costs fairly with your festival squad
+        </div>
+        
+        <div class="toolkit-item">
+            <strong>🚆 Transport Planning:</strong> <a href="https://www.rome2rio.com/" target="_blank">Rome2Rio</a> - Compare all transport options across Europe
+        </div>
+        
+        <div class="toolkit-item">
+            <strong>🏨 Accommodation:</strong> <a href="https://www.hostelworld.com/" target="_blank">Hostelworld</a> - Find budget stays near festival sites
+        </div>
+        
+        <div class="toolkit-item">
+            <strong>☀️ Weather Forecasting:</strong> <a href="https://www.yr.no/en" target="_blank">Yr.no</a> - Accurate European weather forecasts for packing
+        </div>
+    </div>
+
+    <!-- Practical Factors -->
+    <h2>Practical Factors to Consider</h2>
+    
+    <p><img src="https://cdn.shopify.com/s/files/1/0807/8671/9039/files/dj_deck_480x480.jpg?v=1735122360" alt="2026 Music Festival DJ Performance"></p>
+    
+    <p>Beyond music taste, these practical considerations can make or break your 2026 festival experience:</p>
+    
+    <ul>
+        <li><strong>🎫 Ticket Prices:</strong> Major festivals like <a href="https://www.tomorrowland.com/" target="_blank">Tomorrowland</a> and <a href="https://www.wacken.com/" target="_blank">Wacken Open Air</a> command premium prices (£300-400+), while Eastern European festivals like <a href="https://www.exitfest.org/" target="_blank">EXIT</a> and <a href="https://electriccastle.ro/" target="_blank">Electric Castle</a> offer incredible value (£100-200)</li>
+        
+        <li><strong>✈️ Travel Costs:</strong> Budget airlines serve most European festival destinations. Book 2-3 months ahead for best deals. Consider festivals accessible by train like <a href="https://www.rockwerchter.be/" target="_blank">Rock Werchter</a> (Brussels) or <a href="https://www.primaverasound.com/" target="_blank">Primavera Sound</a> (Barcelona)</li>
+        
+        <li><strong>🏕️ Accommodation:</strong> Camping is included at most UK festivals and many European ones. City festivals like <a href="https://wirelessfestival.co.uk/" target="_blank">Wireless</a> and <a href="https://www.wayoutwest.se/" target="_blank">Way Out West</a> require separate accommodation - book early!</li>
+        
+        <li><strong>👥 Capacity & Crowds:</strong> Intimate festivals like <a href="https://dimensionsfestival.com/" target="_blank">Dimensions</a> (few thousand) offer a different vibe than massive events like <a href="https://szigetfestival.com/" target="_blank">Sziget</a> (400k+ total attendance)</li>
+    </ul>
+
+    <!-- Match the Atmosphere -->
+    <h2>Match the Atmosphere to Your Personality</h2>
+    
+    <p>The vibe of a festival can be just as important as the lineup. Here's what to expect in 2026:</p>
+    
+    <ul>
+        <li><strong>🎉 High-Energy Party Festivals:</strong> <a href="https://www.tomorrowland.com/" target="_blank">Tomorrowland</a>, <a href="https://ultraeurope.com/" target="_blank">Ultra Europe</a>, and <a href="https://www.creamfields.com/" target="_blank">Creamfields North</a> - Expect non-stop beats, elaborate production, and all-night dancing</li>
+        
+        <li><strong>🎨 Artsy & Alternative:</strong> <a href="https://www.boomtownfair.co.uk/" target="_blank">Boomtown Fair</a>, <a href="https://electriccastle.ro/" target="_blank">Electric Castle</a>, and <a href="https://www.roskilde-festival.dk/" target="_blank">Roskilde</a> - Immersive experiences with art installations, workshops, and diverse programming</li>
+        
+        <li><strong>👨‍👩‍👧 Family-Friendly & Relaxed:</strong> <a href="https://www.latitudefestival.com/" target="_blank">Latitude</a>, <a href="https://www.greenman.net/" target="_blank">Green Man</a>, and <a href="https://www.womad.co.uk/" target="_blank">WOMAD</a> - Kid-friendly areas, diverse activities, and laid-back atmosphere</li>
+        
+        <li><strong>🤘 Legendary & Iconic:</strong> <a href="https://downloadfestival.co.uk/" target="_blank">Download</a>, <a href="https://www.wacken.com/" target="_blank">Wacken</a>, and <a href="https://www.exitfest.org/" target="_blank">EXIT</a> (25th anniversary!) - Historic venues, loyal communities, bucket-list experiences</li>
+    </ul>
+
+    <!-- All 2026 Festivals Reference Table -->
+    <h2>All 2026 Festivals: Quick Reference Sheet</h2>
+    
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>Festival</th>
+                    <th>2026 Dates</th>
+                    <th>Location</th>
+                    <th>Music</th>
+                    <th>Atmosphere</th>
+                    <th>Price Range</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- UK Festivals -->
+                <tr>
+                    <td>❌ <strong>Glastonbury</strong></td>
+                    <td>No 2026 edition (fallow year)</td>
+                    <td>Somerset, UK</td>
+                    <td>Multi-genre</td>
+                    <td>Next edition: June 2027</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td><a href="https://downloadfestival.co.uk/" target="_blank">Download Festival</a></td>
+                    <td>10-14 June</td>
+                    <td>Donington Park, UK</td>
+                    <td>Rock, Metal</td>
+                    <td>Legendary headbanging</td>
+                    <td>Moderate-High</td>
+                </tr>
+                <tr>
+                    <td><a href="https://isleofwightfestival.com/" target="_blank">Isle of Wight</a></td>
+                    <td>18-21 June</td>
+                    <td>Isle of Wight, UK</td>
+                    <td>Rock, Pop, Indie</td>
+                    <td>Historic island party</td>
+                    <td>Moderate</td>
+                </tr>
+                <tr>
+                    <td><a href="https://parklife.uk.com/" target="_blank">Parklife</a></td>
+                    <td>20-21 June</td>
+                    <td>Manchester, UK</td>
+                    <td>Hip-Hop, EDM, Pop</td>
+                    <td>Urban high-energy</td>
+                    <td>Moderate</td>
+                </tr>
+                <tr>
+                    <td><a href="https://wirelessfestival.co.uk/" target="_blank">Wireless Festival</a></td>
+                    <td>Early July (TBC)</td>
+                    <td>London, UK</td>
+                    <td>Hip-Hop, R&B</td>
+                    <td>Young urban crowd</td>
+                    <td>Moderate-High</td>
+                </tr>
+                <tr>
+                    <td><a href="https://trnsmtfest.com/" target="_blank">TRNSMT</a></td>
+                    <td>Mid-July (TBC)</td>
+                    <td>Glasgow, UK</td>
+                    <td>Rock, Indie, Pop</td>
+                    <td>Scottish energy</td>
+                    <td>Moderate</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.latitudefestival.com/" target="_blank">Latitude</a></td>
+                    <td>Late July (TBC)</td>
+                    <td>Suffolk, UK</td>
+                    <td>Indie, Folk, Arts</td>
+                    <td>Cultural, family-friendly</td>
+                    <td>Moderate</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.womad.co.uk/" target="_blank">WOMAD</a></td>
+                    <td>23-26 July</td>
+                    <td>Wiltshire, UK</td>
+                    <td>World Music</td>
+                    <td>Multicultural, inclusive</td>
+                    <td>Moderate</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.boomtownfair.co.uk/" target="_blank">Boomtown Fair</a></td>
+                    <td>12-16 August</td>
+                    <td>Hampshire, UK</td>
+                    <td>Reggae, D&B, Techno</td>
+                    <td>Theatrical festival city</td>
+                    <td>High</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.greenman.net/" target="_blank">Green Man</a></td>
+                    <td>Mid-August (TBC)</td>
+                    <td>Brecon Beacons, UK</td>
+                    <td>Indie, Folk</td>
+                    <td>Scenic, relaxed</td>
+                    <td>Moderate</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.creamfields.com/" target="_blank">Creamfields North</a></td>
+                    <td>27-30 August</td>
+                    <td>Cheshire, UK</td>
+                    <td>EDM, House, Techno</td>
+                    <td>Massive dance party</td>
+                    <td>High</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.readingfestival.com/" target="_blank">Reading Festival</a></td>
+                    <td>28-30 August</td>
+                    <td>Reading, UK</td>
+                    <td>Rock, Indie, Rap</td>
+                    <td>Youth camping chaos</td>
+                    <td>Moderate</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.leedsfestival.com/" target="_blank">Leeds Festival</a></td>
+                    <td>28-30 August</td>
+                    <td>Leeds, UK</td>
+                    <td>Rock, Indie, Alternative</td>
+                    <td>Twin of Reading</td>
+                    <td>Moderate</td>
+                </tr>
+                <!-- European Festivals -->
+                <tr style="background: #f0f8ff;">
+                    <td colspan="6"><strong>🇪🇺 EUROPEAN FESTIVALS</strong></td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.primaverasound.com/" target="_blank">Primavera Sound</a></td>
+                    <td>4-6 June</td>
+                    <td>Barcelona, Spain</td>
+                    <td>Indie, Alternative</td>
+                    <td>Trendy urban seaside</td>
+                    <td>Moderate-High</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.rock-am-ring.com/" target="_blank">Rock am Ring</a></td>
+                    <td>5-7 June</td>
+                    <td>Nürburgring, Germany</td>
+                    <td>Rock, Metal</td>
+                    <td>Race track mayhem</td>
+                    <td>Moderate-High</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.hellfest.fr/" target="_blank">Hellfest</a> 🔥</td>
+                    <td>June (2 weekends TBC)</td>
+                    <td>Clisson, France</td>
+                    <td>Extreme Metal</td>
+                    <td>Double metal pilgrimage</td>
+                    <td>High</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.graspop.be/" target="_blank">Graspop Metal</a></td>
+                    <td>19-21 June</td>
+                    <td>Dessel, Belgium</td>
+                    <td>Heavy Metal</td>
+                    <td>Headbangers' haven</td>
+                    <td>High</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.roskilde-festival.dk/" target="_blank">Roskilde</a></td>
+                    <td>27 June - 4 July</td>
+                    <td>Roskilde, Denmark</td>
+                    <td>Multi-genre</td>
+                    <td>Non-profit, communal</td>
+                    <td>High</td>
+                </tr>
+                <tr>
+                    <td><a href="https://opener.pl/" target="_blank">Open'er Festival</a></td>
+                    <td>1-4 July</td>
+                    <td>Gdynia, Poland</td>
+                    <td>Rock, Pop, Electronic</td>
+                    <td>Baltic seaside party</td>
+                    <td>Moderate</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.rockwerchter.be/" target="_blank">Rock Werchter</a></td>
+                    <td>2-5 July</td>
+                    <td>Werchter, Belgium</td>
+                    <td>Rock, Alternative</td>
+                    <td>Well-organized classic</td>
+                    <td>High</td>
+                </tr>
+                <tr>
+                    <td><a href="https://donauinselfest.at/" target="_blank">DonauinselFest</a></td>
+                    <td>3-5 July</td>
+                    <td>Vienna, Austria</td>
+                    <td>All genres</td>
+                    <td>Free city festival!</td>
+                    <td>Free</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.exitfest.org/" target="_blank">EXIT Festival</a> 🎉</td>
+                    <td>10-13 July</td>
+                    <td>Novi Sad, Serbia</td>
+                    <td>Multi-genre</td>
+                    <td>25th anniversary fortress party</td>
+                    <td>Low-Moderate</td>
+                </tr>
+                <tr>
+                    <td><a href="https://ultraeurope.com/" target="_blank">Ultra Europe</a></td>
+                    <td>10-12 July</td>
+                    <td>Split, Croatia</td>
+                    <td>EDM</td>
+                    <td>Stadium EDM spectacular</td>
+                    <td>High</td>
+                </tr>
+                <tr>
+                    <td><a href="https://electriccastle.ro/" target="_blank">Electric Castle</a></td>
+                    <td>16-19 July</td>
+                    <td>Bontida, Romania</td>
+                    <td>Indie, Electronic</td>
+                    <td>Castle party grounds</td>
+                    <td>Low-Moderate</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.tomorrowland.com/" target="_blank">Tomorrowland</a></td>
+                    <td>Late July (2 weekends)</td>
+                    <td>Boom, Belgium</td>
+                    <td>EDM</td>
+                    <td>Fantasy EDM world</td>
+                    <td>High</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wacken.com/" target="_blank">Wacken Open Air</a></td>
+                    <td>29 July - 1 August</td>
+                    <td>Wacken, Germany</td>
+                    <td>Heavy Metal</td>
+                    <td>Metal mecca (sold out)</td>
+                    <td>High</td>
+                </tr>
+                <tr>
+                    <td><a href="https://szigetfestival.com/" target="_blank">Sziget</a></td>
+                    <td>5-10 August</td>
+                    <td>Budapest, Hungary</td>
+                    <td>Multi-genre</td>
+                    <td>Island of Freedom</td>
+                    <td>Moderate-High</td>
+                </tr>
+                <tr>
+                    <td><a href="https://untold.com/" target="_blank">Untold</a></td>
+                    <td>6-9 August</td>
+                    <td>Cluj-Napoca, Romania</td>
+                    <td>EDM, Pop</td>
+                    <td>Stadium dance fest</td>
+                    <td>Moderate</td>
+                </tr>
+                <tr>
+                    <td><a href="https://oyafestivalen.no/" target="_blank">Øya Festival</a></td>
+                    <td>12-15 August</td>
+                    <td>Oslo, Norway</td>
+                    <td>Indie, Nordic</td>
+                    <td>Hip city park fest</td>
+                    <td>High</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wayoutwest.se/" target="_blank">Way Out West</a></td>
+                    <td>13-15 August</td>
+                    <td>Gothenburg, Sweden</td>
+                    <td>Indie, Electronic</td>
+                    <td>Eco-conscious hip</td>
+                    <td>Moderate</td>
+                </tr>
+                <tr>
+                    <td><a href="https://lowlands.nl/" target="_blank">Lowlands</a></td>
+                    <td>21-23 August</td>
+                    <td>Biddinghuizen, Netherlands</td>
+                    <td>Multi-genre</td>
+                    <td>Full-featured camping</td>
+                    <td>High</td>
+                </tr>
+                <tr>
+                    <td><a href="https://dimensionsfestival.com/" target="_blank">Dimensions</a></td>
+                    <td>27-31 August</td>
+                    <td>Tisno, Croatia</td>
+                    <td>Underground Electronic</td>
+                    <td>Beach & boat parties</td>
+                    <td>Moderate</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.electricpicnic.ie/" target="_blank">Electric Picnic</a></td>
+                    <td>28-30 August</td>
+                    <td>Stradbally, Ireland</td>
+                    <td>Rock, Pop, Indie</td>
+                    <td>Creative Irish gathering</td>
+                    <td>Moderate-High</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Best Festivals For Different Types -->
+    <h2>Best 2026 Festivals For...</h2>
+    
+    <div class="festival-categories">
+        <div class="category-card">
+            <h3>🎭 First-Timers</h3>
+            <ul>
+                <li><strong>Isle of Wight</strong> - Classic UK experience</li>
+                <li><strong>Open'er</strong> - Great value, beach location</li>
+                <li><strong>Electric Castle</strong> - Unique but manageable</li>
+                <li><strong>Latitude</strong> - Diverse and friendly</li>
+            </ul>
+        </div>
+
+        <div class="category-card">
+            <h3>💸 Tighter Budgets</h3>
+            <ul>
+                <li><strong>DonauinselFest</strong> - Completely free!</li>
+                <li><strong>EXIT Festival</strong> - Amazing value</li>
+                <li><strong>Electric Castle</strong> - Affordable Romania</li>
+                <li><strong>Open'er</strong> - Polish prices</li>
+            </ul>
+        </div>
+
+        <div class="category-card">
+            <h3>🎧 Pure EDM</h3>
+            <ul>
+                <li><strong>Tomorrowland</strong> - The ultimate</li>
+                <li><strong>Ultra Europe</strong> - Beach raving</li>
+                <li><strong>Creamfields</strong> - UK's biggest</li>
+                <li><strong>Dimensions</strong> - Underground vibes</li>
+            </ul>
+        </div>
+
+        <div class="category-card">
+            <h3>👨‍👩‍👧‍👦 Families</h3>
+            <ul>
+                <li><strong>WOMAD</strong> - World music for all</li>
+                <li><strong>Latitude</strong> - Kids' areas</li>
+                <li><strong>Green Man</strong> - Welsh beauty</li>
+                <li><strong>Electric Picnic</strong> - Irish charm</li>
+            </ul>
+        </div>
+
+        <div class="category-card">
+            <h3>🏖️ Beach Holidays</h3>
+            <ul>
+                <li><strong>Primavera Sound</strong> - Barcelona city beach</li>
+                <li><strong>Ultra Europe</strong> - Croatian coast</li>
+                <li><strong>Dimensions</strong> - Intimate beach fest</li>
+                <li><strong>Open'er</strong> - Baltic seaside</li>
+            </ul>
+        </div>
+
+        <div class="category-card">
+            <h3>🎨 Artsy & Alternative</h3>
+            <ul>
+                <li><strong>Boomtown Fair</strong> - Immersive madness</li>
+                <li><strong>Roskilde</strong> - Activism & arts</li>
+                <li><strong>Way Out West</strong> - Scandinavian cool</li>
+                <li><strong>Electric Castle</strong> - Castle creativity</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq-section">
+        <h2>❓ Frequently Asked Questions - 2026 Festival Season</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">Is there a Glastonbury Festival in 2026?</div>
+            <div class="faq-answer">No, Glastonbury is taking a fallow year in 2026 to allow the farm to recover. The next edition is expected in June 2027. Consider alternatives like Download, Latitude, or European festivals like Roskilde for a similar diverse experience.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">When do 2026 festival tickets usually go on sale?</div>
+            <div class="faq-answer">Most major festivals release tickets between October 2025 and February 2026. Sign up for festival newsletters and set calendar reminders. Popular festivals like Tomorrowland and Wacken often sell out within hours!</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Which 2026 European festivals are best for solo travelers?</div>
+            <div class="faq-answer">Roskilde (Denmark), Sziget (Hungary), and Way Out West (Sweden) have particularly welcoming communities for solo festival-goers. Join festival Facebook groups to find travel buddies and camping companions.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Which 2026 festivals are better for families with children?</div>
+            <div class="faq-answer">WOMAD, Latitude, Green Man, and Electric Picnic all have dedicated family camping areas and kids' activities. These festivals offer a more relaxed atmosphere with diverse programming beyond just music.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">How early should I book accommodation for big 2026 festivals?</div>
+            <div class="faq-answer">For city festivals (Primavera, Wireless), book accommodation as soon as you have tickets - hotels fill up fast. For camping festivals, standard camping is usually included, but glamping options should be booked 2-3 months ahead.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Can I combine multiple festivals in one trip?</div>
+            <div class="faq-answer">Absolutely! Popular 2026 combinations include: Croatian coast (Ultra Europe → Dimensions), Belgian circuit (Rock Werchter → Tomorrowland), or the metal route (Graspop → Hellfest → Wacken). Plan transport between festivals early for best prices.</div>
+        </div>
+    </div>
+
+    <!-- Conclusion -->
+    <h2>Ready for Your 2026 Festival Adventure?</h2>
+    
+    <p><img src="https://cdn.shopify.com/s/files/1/0807/8671/9039/files/festival_goers_480x480.jpg?v=1735122815" alt="2026 Festival Goers Enjoying Music Festival"></p>
+    
+    <p>The 2026 festival season promises to be extraordinary, with special anniversaries, expanded formats, and incredible lineups across the UK and Europe. Whether you're seeking the intense metal brotherhood of Wacken, the fantasy world of Tomorrowland, or the creative chaos of Boomtown Fair, your perfect festival match is waiting.</p>
+    
+    <p>Remember to use our quiz above to narrow down your choices, book tickets early (many sell out months in advance!), and start planning your festival squad. With proper preparation using our toolkit and tips, you're all set for unforgettable memories in 2026.</p>
+    
+    <p><strong>See you in the fields, at the stages, and on the dancefloors of 2026! 🎪🎸🎉</strong></p>
+
+    <!-- Archive Link -->
+    <div style="margin-top: 40px; padding: 15px; background: #f8f8f8; border-radius: 10px; text-align: center;">
+        <p>Looking for last year's guide? Check out our <a href="#">2025 Festivals Archive</a></p>
+    </div>
+</div>
+
+</body>
+</html>
