@@ -14,19 +14,15 @@
  * Base Blog Post Styling
  ****************************************/
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.7;
     margin: 0;
     padding: 0;
-    color: #333;
-    background: #f5f5f5;
 }
 
 .container {
     max-width: 900px;
     margin: 0 auto;
     padding: 30px 20px;
-    background: white;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
 }
 
@@ -168,13 +164,10 @@ tr:last-child td {
     max-width: 750px;
     margin: 40px auto;
     padding: 30px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
 }
 
 .quiz-container h2 {
-    color: white;
     text-align: center;
     font-size: 2.2em;
     margin-bottom: 30px;
@@ -200,6 +193,35 @@ tr:last-child td {
 
 .quiz-options {
     margin-left: 0;
+}
+
+#festival-filters {
+    text-align: center;
+}
+
+.filter-group {
+    margin-bottom: 10px;
+}
+
+.filter-heading {
+    margin-bottom: 4px;
+}
+
+.filter-inline-group {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-inline-group label {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.festival-result-card {
+    margin: 0 auto;
 }
 
 .quiz-options label {
@@ -252,7 +274,6 @@ tr:last-child td {
 .result-container {
     margin-top: 30px;
     padding: 30px;
-    background: white;
     border-radius: 15px;
     display: none;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
@@ -505,40 +526,44 @@ tr:last-child td {
     <!-- Filters shown after quiz is run at least once -->
 <div id="festival-filters" style="display:none; margin-bottom:15px;">
 
-  <div class="quiz-options" style="margin-bottom:10px;">
-    <span><strong>Budget:</strong></span><br>
-    <label>
-      <input type="radio" name="filter-budget" value="cheap" onclick="applyFestivalFiltersAndRender()">
-      Cheaper options
-    </label><br>
-    <label>
-      <input type="radio" name="filter-budget" value="medium" onclick="applyFestivalFiltersAndRender()">
-      Mid range
-    </label><br>
-    <label>
-      <input type="radio" name="filter-budget" value="iconic" onclick="applyFestivalFiltersAndRender()">
-      Iconic blowouts
-    </label>
+  <div class="quiz-options filter-group">
+    <div class="filter-heading"><strong>Budget:</strong></div>
+    <div class="filter-inline-group">
+      <label>
+        <input type="radio" name="filter-budget" value="cheap" onclick="applyFestivalFiltersAndRender()">
+        Cheaper options
+      </label>
+      <label>
+        <input type="radio" name="filter-budget" value="medium" onclick="applyFestivalFiltersAndRender()">
+        Mid range
+      </label>
+      <label>
+        <input type="radio" name="filter-budget" value="iconic" onclick="applyFestivalFiltersAndRender()">
+        Iconic blowouts
+      </label>
+    </div>
   </div>
 
-  <div class="quiz-options" style="margin-bottom:10px;">
-    <span><strong>Crowd:</strong></span><br>
-    <label>
-      <input type="radio" name="filter-crowd" value="all" onclick="applyFestivalFiltersAndRender()">
-      Any crowd
-    </label><br>
-    <label>
-      <input type="radio" name="filter-crowd" value="younger" onclick="applyFestivalFiltersAndRender()">
-      Younger, late night
-    </label><br>
-    <label>
-      <input type="radio" name="filter-crowd" value="mixed" onclick="applyFestivalFiltersAndRender()">
-      Mixed ages
-    </label><br>
-    <label>
-      <input type="radio" name="filter-crowd" value="matureFamily" onclick="applyFestivalFiltersAndRender()">
-      More mature or family oriented
-    </label>
+  <div class="quiz-options filter-group">
+    <div class="filter-heading"><strong>Crowd:</strong></div>
+    <div class="filter-inline-group">
+      <label>
+        <input type="radio" name="filter-crowd" value="all" onclick="applyFestivalFiltersAndRender()">
+        Any crowd
+      </label>
+      <label>
+        <input type="radio" name="filter-crowd" value="younger" onclick="applyFestivalFiltersAndRender()">
+        Younger, late night
+      </label>
+      <label>
+        <input type="radio" name="filter-crowd" value="mixed" onclick="applyFestivalFiltersAndRender()">
+        Mixed ages
+      </label>
+      <label>
+        <input type="radio" name="filter-crowd" value="matureFamily" onclick="applyFestivalFiltersAndRender()">
+        More mature or family oriented
+      </label>
+    </div>
   </div>
 
   <div class="quiz-options">
@@ -1108,19 +1133,23 @@ tr:last-child td {
 
   function renderFestivalResultsList(items, answers, container) {
     container.innerHTML = "";
+    container.style.display = "block";
+    container.style.flexWrap = "";
+    container.style.gap = "";
 
     if (!items || items.length === 0) {
       container.innerHTML = "<p>No festivals match your current filters. Try adjusting them to see more options.</p>";
       return;
     }
 
-    const toShow = items.slice(0, 6);
-    const grid = document.createElement("div");
-    grid.style.display = "flex";
-    grid.style.flexWrap = "wrap";
-    grid.style.gap = "20px";
+    container.style.display = "flex";
+    container.style.flexWrap = "wrap";
+    container.style.gap = "20px";
 
-    toShow.forEach(function(item) {
+    const toShow = items.slice(0, 6);
+    const bandColors = ["#8BC34A", "#FF9800", "#03A9F4", "#E91E63", "#9C27B0", "#FFC107"];
+
+    toShow.forEach(function(item, index) {
       const fest = item.festival;
       const band = getCostBandForUser(fest, answers.location);
       const budgetText = budgetBandToText(band);
@@ -1128,34 +1157,46 @@ tr:last-child td {
       const whyText = buildWhyText(fest, answers);
 
       const card = document.createElement("article");
-      card.className = "festival-result";
-      card.style.margin = "0";
-      card.style.flex = "1 1 calc(50% - 20px)";
-      card.style.display = "flex";
-      card.style.flexDirection = "column";
-      card.style.justifyContent = "space-between";
+      card.className = "festival-result-card";
+      card.style.border = "1px solid #ccc";
+      card.style.borderRadius = "8px";
+      card.style.padding = "0";
+      card.style.boxSizing = "border-box";
+      card.style.flex = "1 1 260px";
+      card.style.maxWidth = "260px";
+      card.style.minWidth = "220px";
+      card.style.position = "relative";
+      card.style.overflow = "hidden";
 
-      const header = document.createElement("div");
-      header.innerHTML =
+      const bandColor = bandColors[index % bandColors.length];
+
+      const bandBar = document.createElement("div");
+      bandBar.className = "festival-card-band";
+      bandBar.style.height = "14px";
+      bandBar.style.width = "100%";
+      bandBar.style.backgroundColor = bandColor;
+      bandBar.style.position = "absolute";
+      bandBar.style.top = "0";
+      bandBar.style.left = "0";
+
+      const inner = document.createElement("div");
+      inner.className = "festival-card-inner";
+      inner.style.padding = "18px 15px 15px 15px";
+      inner.innerHTML =
         '<h3 class="result-festival-title">' +
           '<a href="' + fest.link + '" target="_blank" rel="noopener">' +
             fest.name +
           '</a>' +
         '</h3>' +
-        '<p class="result-festival-description">' + fest.description + '</p>';
-
-      const details = document.createElement("div");
-      details.innerHTML =
+        '<p class="result-festival-description">' + fest.description + '</p>' +
         '<p><strong>Why it suits you:</strong> ' + whyText + '</p>' +
         '<p><strong>Crowd:</strong> ' + crowdText + '</p>' +
         '<p><strong>Approx budget from your region:</strong> ' + budgetText + '</p>';
 
-      card.appendChild(header);
-      card.appendChild(details);
-      grid.appendChild(card);
+      card.appendChild(bandBar);
+      card.appendChild(inner);
+      container.appendChild(card);
     });
-
-    container.appendChild(grid);
   }
 
   function budgetBandToText(band) {
