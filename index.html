@@ -863,6 +863,14 @@ tr:last-child td {
 
   let lastFestivalScores = [];
   let lastFestivalAnswers = null;
+  const radioFilterDefaults = {
+    "filter-budget": "all",
+    "filter-crowd": "all"
+  };
+  const radioFilterState = {
+    "filter-budget": radioFilterDefaults["filter-budget"],
+    "filter-crowd": radioFilterDefaults["filter-crowd"]
+  };
 
   // ============================
   // Quiz handling
@@ -884,9 +892,15 @@ tr:last-child td {
     lastFestivalScores = scoreFestivals(answers);
 
     // Reset filters to defaults
-    document.getElementById("filter-budget").value = "all";
-    document.getElementById("filter-crowd").value = "all";
+    document.querySelectorAll('input[name="filter-budget"]').forEach(radio => {
+      radio.checked = false;
+    });
+    document.querySelectorAll('input[name="filter-crowd"]').forEach(radio => {
+      radio.checked = radio.value === "all";
+    });
     document.getElementById("filter-kids").checked = false;
+    radioFilterState["filter-budget"] = radioFilterDefaults["filter-budget"];
+    radioFilterState["filter-crowd"] = radioFilterDefaults["filter-crowd"];
 
     // Show filters and result container
     document.getElementById("festival-filters").style.display = "block";
@@ -984,7 +998,25 @@ tr:last-child td {
   // ============================
   // Filters and rendering
   // ============================
-  function applyFestivalFiltersAndRender() {
+  function applyFestivalFiltersAndRender(triggerEvent) {
+    const evt = triggerEvent || window.event || null;
+    let triggeredInput = null;
+
+    if (evt && evt.target && evt.target.type === "radio") {
+      triggeredInput = evt.target;
+    } else if (document.activeElement && document.activeElement.type === "radio") {
+      triggeredInput = document.activeElement;
+    }
+
+    if (triggeredInput && Object.prototype.hasOwnProperty.call(radioFilterState, triggeredInput.name)) {
+      if (radioFilterState[triggeredInput.name] === triggeredInput.value) {
+        triggeredInput.checked = false;
+        radioFilterState[triggeredInput.name] = radioFilterDefaults[triggeredInput.name];
+      } else {
+        radioFilterState[triggeredInput.name] = triggeredInput.value;
+      }
+    }
+
     const messagesDiv = document.getElementById("festival-result-messages");
     const box = document.getElementById("festival-result-box");
     messagesDiv.innerHTML = "";
@@ -994,9 +1026,17 @@ tr:last-child td {
       return;
     }
 
-    const budgetFilter = document.getElementById("filter-budget").value;
-    const crowdFilter = document.getElementById("filter-crowd").value;
+    const getRadioValue = function(name) {
+      const checked = document.querySelector('input[name="' + name + '"]:checked');
+      return checked ? checked.value : radioFilterDefaults[name] || "all";
+    };
+
+    const budgetFilter = getRadioValue("filter-budget");
+    const crowdFilter = getRadioValue("filter-crowd");
     const kidsFilter = document.getElementById("filter-kids").checked;
+
+    radioFilterState["filter-budget"] = budgetFilter;
+    radioFilterState["filter-crowd"] = crowdFilter;
 
     let filtered = lastFestivalScores.slice(); // copy
 
@@ -1016,6 +1056,9 @@ tr:last-child td {
         const band = getCostBandForUser(item.festival, lastFestivalAnswers.location);
         if (budgetFilter === "cheap") {
           return band === "low" || band === "medium";
+        }
+        if (budgetFilter === "medium") {
+          return band === "medium";
         }
         if (budgetFilter === "iconic") {
           return band === "high";
@@ -1066,34 +1109,53 @@ tr:last-child td {
   function renderFestivalResultsList(items, answers, container) {
     container.innerHTML = "";
 
-    // Show up to 6 results
-    const toShow = items.slice(0, 6);
+    if (!items || items.length === 0) {
+      container.innerHTML = "<p>No festivals match your current filters. Try adjusting them to see more options.</p>";
+      return;
+    }
 
-    toShow.forEach(function(item, index) {
+    const toShow = items.slice(0, 6);
+    const grid = document.createElement("div");
+    grid.style.display = "flex";
+    grid.style.flexWrap = "wrap";
+    grid.style.gap = "20px";
+
+    toShow.forEach(function(item) {
       const fest = item.festival;
       const band = getCostBandForUser(fest, answers.location);
       const budgetText = budgetBandToText(band);
       const crowdText = crowdAgeToText(fest.crowdAge);
       const whyText = buildWhyText(fest, answers);
 
-      const card = document.createElement("div");
-      card.style.marginBottom = "20px";
+      const card = document.createElement("article");
+      card.className = "festival-result";
+      card.style.margin = "0";
+      card.style.flex = "1 1 calc(50% - 20px)";
+      card.style.display = "flex";
+      card.style.flexDirection = "column";
+      card.style.justifyContent = "space-between";
 
-      card.innerHTML =
+      const header = document.createElement("div");
+      header.innerHTML =
         '<h3 class="result-festival-title">' +
           '<a href="' + fest.link + '" target="_blank" rel="noopener">' +
             fest.name +
           '</a>' +
         '</h3>' +
-        '<p class="result-festival-description">' +
-          fest.description +
-        '</p>' +
-        '<p><strong>Why it suits you:</strong> ' + whyText + "</p>" +
-        '<p><strong>Crowd:</strong> ' + crowdText + "</p>" +
-        '<p><strong>Approx budget from your region:</strong> ' + budgetText + "</p>";
+        '<p class="result-festival-description">' + fest.description + '</p>';
 
-      container.appendChild(card);
+      const details = document.createElement("div");
+      details.innerHTML =
+        '<p><strong>Why it suits you:</strong> ' + whyText + '</p>' +
+        '<p><strong>Crowd:</strong> ' + crowdText + '</p>' +
+        '<p><strong>Approx budget from your region:</strong> ' + budgetText + '</p>';
+
+      card.appendChild(header);
+      card.appendChild(details);
+      grid.appendChild(card);
     });
+
+    container.appendChild(grid);
   }
 
   function budgetBandToText(band) {
